@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.android.agenda.R;
+import com.android.agenda.dao.AlunoDAO;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,12 +20,12 @@ public class ListaAlunosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
 
+        AlunoDAO dao = new AlunoDAO();
+
         setTitle("Lista de alunos");
 
-        List<String> alunos = new ArrayList<>(Arrays.asList(
-                "Aluno 1", "Aluno 2", "Aluno 3", "Aluno 4"));
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_list_view);
         listaDeAlunos.setAdapter(new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, alunos));
+                this, android.R.layout.simple_list_item_1, dao.todos()));
     }
 }
