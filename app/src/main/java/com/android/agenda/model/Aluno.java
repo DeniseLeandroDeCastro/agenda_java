@@ -1,6 +1,7 @@
 package com.android.agenda.model;
 
 public class Aluno {
+
     private final String nome;
     private final String telefone;
     private final String email;
@@ -13,6 +14,6 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return nome +", Tel.: " + telefone +", Email: "+ email;
+        return nome +", Tel.: " + telefone +" - "+ email;
     }
 }
